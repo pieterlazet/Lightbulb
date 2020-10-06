@@ -64,8 +64,6 @@ function draw(){;
 
   text(lenX, 40, 40);
 
-  text(mouseX + " : " + mouseY, 40, 600);
-
   particle.show();
 
 
