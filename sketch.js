@@ -27,17 +27,15 @@ function setup (){
   circuit = new Circuit();
   particle = new Particle();
   move = new Move();
+  car = new Car(carX, carY);
   ray = new Ray(car, angle);
 }
 
 function draw(){;
 
-  const car = circuit.buildcar(carX, carY);
-
   background(0);
 
   circuit.build();
-
 
   wall.show();
 
@@ -45,22 +43,16 @@ function draw(){;
 
   particle.look(wall, car);
 
-  // const pt = particle.point(wall);
-
   const pt = particle.look(wall, car);
-
-  // console.log(pt);
 
   move = new Move();  
 
-  lenX = move.disX(pt, carX);
-  lenY = move.disY(pt, carY);
+  lenX = move.disX(pt, car);
+  lenY = move.disY(pt, car);
 
-  // console.log(lenX, carX, lenY, carY);
+  move = move.move(lenX, lenY, car);
 
-  move = move.move(lenX, carX, lenY, carY);
-
-  carX = move;
+  car = move;
 
   text(lenX, 40, 40);
 

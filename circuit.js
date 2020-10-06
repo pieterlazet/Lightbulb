@@ -7,13 +7,4 @@ class Circuit{
         let wall = new Boundary(x1, y1, x2, y2);
         return wall;
     }
-
-    buildcar(carX, carY) {
-        pos = createVector(carX, carY);
-        return pos;
-    }
-
-    show(){
-        
-    }
 }

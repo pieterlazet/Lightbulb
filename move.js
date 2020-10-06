@@ -1,23 +1,22 @@
 class Move {
-    disX(pt, carX) {
-        lenX = pt.x - carX;
+    disX(pt, car) {
+        lenX = pt.x - car.x;
         return lenX;
     }
 
-    disY(pt, carY) {
-        lenY = pt.y - carY;
+    disY(pt, car) {
+        lenY = pt.y - car.y;
         return lenY;
     }
 
-    move(disX, carX, disY, carY) {
+    move(disX, disY, car) {
         disY = disY;
-        carY = carY;
         if (disX < 20) {
-            carX = carX - 100;
-            return carX;
+            car.x = car.x - 100;
+            return car;
         }else {
-            carX += 1;
-            return carX;
+            car.x += 1;
+            return car;
         }
     }
 }

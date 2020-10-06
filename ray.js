@@ -2,7 +2,6 @@ class Ray {
     constructor(pos, angle) {
         this.pos = pos;
         this.dir = p5.Vector.fromAngle(radians(angle));
-        // console.log(this.dir);
     }
 
     lookAt(x, y) {
@@ -20,8 +19,6 @@ class Ray {
     }
 
     cast(wall, pos) {
-        console.log(wall, pos);
-
         const x1 = wall.a.x;
         const y1 = wall.a.y;
         const x2 = wall.b.x;
@@ -43,7 +40,6 @@ class Ray {
 
         if (t > 0 && t < 1 && u > 0) {
                 const pt = createVector();
-                // console.log(2);
                 pt.x = x1 + t * (x2 - x1);
                 pt.y = y1 + t * (y2 - y1);
                 return pt;
