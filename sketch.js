@@ -8,7 +8,7 @@ let amount = 0;
 let point;
 let lenX;
 let lenY;
-let carX = 100;
+let carX = 51;
 let carY = 300;
 let car;
 let angle = 90;
@@ -17,13 +17,6 @@ let angle = 90;
 
 function setup (){
   createCanvas (displayWidth * 0.9, displayHeight * 0.8);
-  for (let i = 0; i < 1; i++) {
-    let x1 = 150;
-    let y1 = 150;
-    let x2 = 150;
-    let y2 = 550; 
-    wall = new Boundary(x1, y1, x2, y2);
-  }
   circuit = new Circuit();
   particle = new Particle();
   move = new Move();
@@ -35,15 +28,20 @@ function draw(){;
 
   background(0);
 
-  circuit.build();
+  walls = circuit.build(walls);
 
-  wall.show();
+  walls[0].show();
+  walls[1].show();
+  walls[2].show();
+  walls[3].show();
+  walls[4].show();
+  walls[5].show();
 
   particle.update(car);
 
-  particle.look(wall, car);
+  // particle.look(walls[0], car);
 
-  const pt = particle.look(wall, car);
+  const pt = particle.look(walls[1], car);
 
   move = new Move();  
 
