@@ -13,15 +13,13 @@ let carY = 300;
 let car;
 let angle = 90;
 
-
-
 function setup (){
   createCanvas (displayWidth * 0.9, displayHeight * 0.8);
   circuit = new Circuit();
   particle = new Particle();
   move = new Move();
   car = new Car(carX, carY);
-  ray = new Ray(car, angle);
+  // ray = new Ray(car, angle);
 }
 
 function draw(){;
@@ -29,13 +27,28 @@ function draw(){;
   background(0);
 
   walls = circuit.build(walls);
-
+  
   walls[0].show();
   walls[1].show();
   walls[2].show();
   walls[3].show();
   walls[4].show();
   walls[5].show();
+  walls[6].show();
+  walls[7].show();
+  walls[8].show();
+  walls[9].show();
+  walls[10].show();
+  walls[11].show();
+  walls[12].show();
+  walls[13].show();
+  walls[14].show();
+  walls[15].show();
+  walls[16].show();
+  walls[17].show();
+  walls[18].show();
+  walls[19].show();
+
 
   particle.update(car);
 
@@ -59,7 +72,7 @@ function draw(){;
 
 
 
-  // ray.show();
+  // ray1.show();
   // ray.lookAt(mouseX, mouseY);
 
   // let pt = ray.cast(wall);
