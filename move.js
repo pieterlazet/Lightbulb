@@ -12,7 +12,7 @@ class Move {
     move(disX, disY, car) {
         disY = disY;
         if (disX < 20) {
-            car.x = car.x - 23;
+            car.x = car.x -  23;
             return car;
         }else {
             car.x += 1;

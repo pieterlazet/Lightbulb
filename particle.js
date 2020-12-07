@@ -33,23 +33,18 @@ class Particle {
             // } 
 
             if (pt) {
-                stroke(255, 100);
-                line(this.pos.x, this.pos.y, pt.x, pt.y);
+                stroke(0, 100);
+                // line(this.pos.x, this.pos.y, pt.x, pt.y);
             } 
             return pt;
         } 
     }
 
-    point(wall) {
-        const pt = ray.cast(wall);
-        return pt;
-    }
-
     show() {
-        fill(255);
+        fill(0);
         ellipse(this.pos.x, this.pos.y, 4);
         for (let ray of this.rays) {
-            ray.show();
+            // ray.show();
         }
     }
 }

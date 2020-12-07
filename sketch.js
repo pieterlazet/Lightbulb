@@ -12,6 +12,8 @@ let carX = 51;
 let carY = 300;
 let car;
 let angle = 90;
+let seewall = [];
+let pass = 0;
 
 function setup (){
   createCanvas (displayWidth * 0.9, displayHeight * 0.8);
@@ -24,7 +26,7 @@ function setup (){
 
 function draw(){;
 
-  background(0);
+  background(255);
 
   walls = circuit.build(walls);
   
@@ -52,14 +54,26 @@ function draw(){;
 
   particle.update(car);
 
-  // particle.look(walls[0], car);
+  particle.look(walls[1], car);
 
-  const pt = particle.look(walls[1], car);
+  for (var i = 0; i < 20; i++) {
+    const pt = particle.look(walls[i], car);
+    if (typeof pt == 'undefined') {
+      pass = 0;
+    }
+    else{
+      seewall[i] = pt;
+    }
+  }
+
+  seewall.sort(function(a, b){return a - b});
+
+  console.log(seewall[1]);
 
   move = new Move();  
 
-  lenX = move.disX(pt, car);
-  lenY = move.disY(pt, car);
+  lenX = move.disX(seewall[1], car);
+  lenY = move.disY(seewall[1], car);
 
   move = move.move(lenX, lenY, car);
 
